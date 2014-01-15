@@ -21,7 +21,7 @@ var pokeAndExpTotals; // string value retuned from getPokeAndExpTotalsString
 // Functions
 
 //procedure: based on userPokeCount, announces the next step for Pokemon trainer
-var findPokeTask = function (pokeCount) {		
+var suggestPokeTask = function (pokeCount) {		
 	var pokeCount;
 	
 	if (pokeCount < 6) {
@@ -58,7 +58,7 @@ var trainPoke = function (trainingRounds) {
 	
 	
 	for (trainingRounds; trainingRounds > 0; trainingRounds-- ) {
-		userOpponentPick = prompt("Choose an opponent.", "Pidgey or Rattata");
+		userOpponentPick = prompt("Who is your opponent.", "Pidgey or Rattata");
 		if (userOpponentPick ==="Pidgey") {
 			totalExp = totalExp + pidgeyExp;
 			console.log("Your Exp increased by " + pidgeyExp + ".");
@@ -88,7 +88,7 @@ userName = prompt("Hi! What's your name?","");
 
 userPokeCount = parseInt(prompt(userName + ", how many Pokemon do you have?", "Enter value 1-6"));
 
-findPokeTask(userPokeCount); 
+suggestPokeTask(userPokeCount); 
 
 wantsPokemon = confirm("Alright, " + userName + " do you want to catch more Pokemon?");
 
@@ -110,11 +110,7 @@ finalExpCountString = "you gained " + totalExpGained + " experience"
 pokeAndExpTotals = getPokeAndExpTotalsString(finalPokeCountString, finalExpCountString);
 
 console.log(pokeAndExpTotals);
-
-
-//console.log(userPokeCount);
-//console.log(fullBelt);		
-//console.log(totalExpGained);		
+		
 
 
 
