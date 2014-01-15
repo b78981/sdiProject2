@@ -7,21 +7,39 @@ Completed 01/16/14
 
 
 // Global Variables
+var userName;
 var userPokeCount;
 
 // Functions
 
-var getPokeCount = function (pokeCount) {
+var findPokeTask = function (pokeCount) {
+	var pokeCount;
+	
 	if (pokeCount < 6) {
-		console.log("We need to catch some Pokemon!");
-		} else {
-			console.log("We don't have anymore room for new Pokemon...");
-			};
+		console.log("You need to catch some Pokemon!");
+	} 
+	else {
+		console.log("You need to start training your Pokemon!");
+		};
+	return;
 	};
 
 
 // Main Code
 
+userName = prompt("Hi! What's your name?","");
 
-userPokeCount = prompt("How many Pokemon do you have?", "Enter value 1-6");
-getPokeCount(userPokeCount);
+userPokeCount = parseInt(prompt(userName + ", how many Pokemon do you have?", "Enter value 1-6"));
+
+findPokeTask(userPokeCount); 
+
+confirm("Alright, " + userName + " are you ready to start exploring?");
+
+
+
+
+
+
+
+
+
