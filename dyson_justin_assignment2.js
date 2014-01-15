@@ -9,7 +9,8 @@ Completed 01/16/14
 // Global Variables
 var userName; // string
 var userPokeCount; // number
-var isUserReady; // boolean
+var wantsPokemon; // boolean
+
 
 // Functions
 
@@ -25,21 +26,18 @@ var findPokeTask = function (pokeCount) {		//procedure: based on pokeCount, anno
 	return;
 	};
 	
-var catchPoke = function (userIsReady,pokeCount) { 			//boolean function: returns beltIsFull
-	if (userIsReady) {
-		while (pokeCount < 6) {
+var catchPoke = function (addToBelt,pokeCount) { 			//boolean function: returns beltIsFull
+	var addToBelt; // boolean
+	pokeCount; // number
+
+	if (addToBelt) {	
+		while (pokeCount < 6){
 			pokeCount ++;
-			console.log("Great " + userName + ", you now have " + pokeCount + " pokemon on your Poke-belt!");
-			};
-	}
-	else {
-		console.log("Too bad! The wild Pokemon aren't waiting for you to be ready; here they come!");
-		while (pokeCount < 6) {
-			pokeCount ++;
-			console.log("Great " + userName + ", you now have " + pokeCount + " pokemon on your Poke-belt!");
-			}
+			console.log("Great " + userName + " you now have " + pokeCount + " Pokemon!");
+			} 
+		console.log("Your Poke-belt is full!");
+		return beltIsFull
 		};
-		return beltIsFull, pokeCount;
 	};
 
 
@@ -51,11 +49,17 @@ userPokeCount = parseInt(prompt(userName + ", how many Pokemon do you have?", "E
 
 findPokeTask(userPokeCount); 
 
-isUserReady = confirm("Alright, " + userName + " are you ready to start exploring?");
+wantsPokemon = confirm("Alright, " + userName + " do you want to catch more Pokemon?");
 
-catchPoke(isUserReady, userPokeCount);
+if (addToBelt){
+	catchPoke(addToBelt, userPokeCount);
+	} 
+else {
+	trainPoke();
+	}
 
-console.log(catchPoke(pokeCount));
+
+
 
 
 
