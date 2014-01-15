@@ -57,10 +57,10 @@ var trainPoke = function (trainingRounds) {
 		userOpponentPick = prompt("Choose an opponent.", "Pidgey or Rattata");
 		if (userOpponentPick ==="Pidgey") {
 			totalExp = totalExp + pidgeyExp;
-			console.log("Your Exp increase by " + pidgeyExp + ".");
+			console.log("Your Exp increased by " + pidgeyExp + ".");
 			} else if (userOpponentPick === "Rattata") {
 				totalExp = totalExp + rattataExp;
-				console.log("Your Exp increase by " + rattataExp + ".");
+				console.log("Your Exp increased by " + rattataExp + ".");
 				};
 		};
 	
@@ -80,16 +80,14 @@ wantsPokemon = confirm("Alright, " + userName + " do you want to catch more Poke
 if (wantsPokemon){
 	fullBelt = catchPoke(wantsPokemon, userPokeCount); 
 	userPokeCount = 6;
+	trainingBattles = prompt("Now you must train. How many training battles do you want to have?","Choose 1-3");
+	totalExpGained = trainPoke(trainingBattles);
 	}
 else {
 	trainingBattles = prompt("How many training battles do you want to have?","Choose 1-3");
 	totalExpGained = trainPoke(trainingBattles);
 	};
 	
-//fullBelt = catchPoke(); 
-//totalExpGained = trainPoke();
-
-
 
 console.log(userPokeCount);
 console.log(fullBelt);		// will not print if not used in the IF statement
