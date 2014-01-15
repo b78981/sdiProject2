@@ -13,6 +13,9 @@ var wantsPokemon; // boolean
 var fullBelt; // boolean that holds the boolean function return
 var trainingBattles; // number
 var totalExpGained; // number that holds the number function return 
+var finalPokeCountString; // string
+var finalExpCountString; // string
+var pokeAndExpTotals; // string value retuned from getPokeAndExpTotalsString
 
 
 // Functions
@@ -30,7 +33,7 @@ var findPokeTask = function (pokeCount) {
 	return;
 	};
 	
-//boolean function: returns TRUE
+//boolean function: returns boolean value of TRUE
 var catchPoke = function (addToBelt,pokeCount) { 			
 	var addToBelt; // boolean
 	var pokeCount; // number
@@ -45,13 +48,14 @@ var catchPoke = function (addToBelt,pokeCount) {
 		};
 	};
 
-// number function: returns
+// number function: returns a number called totalExp
 var trainPoke = function (trainingRounds) {
 	var trainingRounds; 	// number value from trainingBattles
 	var rattataExp = 22;	// number of experience points earned 
 	var pidgeyExp = 17;	// number of experience points earned 
 	var userOpponentPick; // string
 	var totalExp = 0; // number
+	
 	
 	for (trainingRounds; trainingRounds > 0; trainingRounds-- ) {
 		userOpponentPick = prompt("Choose an opponent.", "Pidgey or Rattata");
@@ -66,6 +70,17 @@ var trainPoke = function (trainingRounds) {
 	
 	return totalExp;
 	};
+	
+// string function, returns string called 
+var getPokeAndExpTotalsString = function (pokeCountString, expCountString) {
+	var totalCountsString;
+	var expCountString;
+	var pokeCountString;
+	
+	return totalCountsString = "Congratulations " + userName + ", " + pokeCountString + " and " + expCountString;
+	};
+
+
 
 // Main Code
 
@@ -84,18 +99,22 @@ if (wantsPokemon){
 	totalExpGained = trainPoke(trainingBattles);
 	}
 else {
+	console.log("Alright, let's start training");
 	trainingBattles = prompt("How many training battles do you want to have?","Choose 1-3");
 	totalExpGained = trainPoke(trainingBattles);
 	};
 	
+finalPokeCountString = "you have " + userPokeCount + " Pokemon"
+finalExpCountString = "you gained " + totalExpGained + " experience"
 
-console.log(userPokeCount);
-console.log(fullBelt);		// will not print if not used in the IF statement
-console.log(totalExpGained);		// will not print if not used in the IF statement
+pokeAndExpTotals = getPokeAndExpTotalsString(finalPokeCountString, finalExpCountString);
+
+console.log(pokeAndExpTotals);
 
 
-
-
+//console.log(userPokeCount);
+//console.log(fullBelt);		
+//console.log(totalExpGained);		
 
 
 
