@@ -10,11 +10,16 @@ Completed 01/16/14
 var userName; // string
 var userPokeCount; // number
 var wantsPokemon; // boolean
+var pokeCount; // boolean
+var fullBelt; // boolean that holds the boolean function return
+var trainingBattles; // number
+var totalExpGained; // number that holds the number function return 
 
 
 // Functions
 
-var findPokeTask = function (pokeCount) {		//procedure: based on pokeCount, announces the next step for Pokemon trainer
+//procedure: based on pokeCount, announces the next step for Pokemon trainer
+var findPokeTask = function (pokeCount) {		
 	var pokeCount;
 	
 	if (pokeCount < 6) {
@@ -26,9 +31,10 @@ var findPokeTask = function (pokeCount) {		//procedure: based on pokeCount, anno
 	return;
 	};
 	
-var catchPoke = function (addToBelt,pokeCount) { 			//boolean function: returns beltIsFull
+//boolean function: returns TRUE
+var catchPoke = function (addToBelt,pokeCount) { 			
 	var addToBelt; // boolean
-	pokeCount; // number
+	var pokeCount; // number
 
 	if (addToBelt) {	
 		while (pokeCount < 6){
@@ -36,10 +42,31 @@ var catchPoke = function (addToBelt,pokeCount) { 			//boolean function: returns 
 			console.log("Great " + userName + " you now have " + pokeCount + " Pokemon!");
 			} 
 		console.log("Your Poke-belt is full!");
-		return beltIsFull
+		return true
 		};
 	};
 
+// number function: returns
+var trainPoke = function (trainingRounds) {
+	var trainingRounds; 	// number value from trainingBattles
+	var rattataExp = 22;	// number of experience points earned 
+	var pidgeyExp = 17;	// number of experience points earned 
+	var userOpponentPick; // string
+	var totalExp = 0; // number
+	
+	for (trainingRounds; trainingRounds > 0; trainingRounds-- ) {
+		userOpponentPick = prompt("Choose an opponent.", "Pidgey or Rattata");
+		if (userOpponentPick ==="Pidgey") {
+			totalExp = totalExp + pidgeyExp;
+			console.log("Your Exp increase by " + pidgeyExp + ".");
+			} else if (userOpponentPick === "Rattata") {
+				totalExp = totalExp + rattataExp;
+				console.log("Your Exp increase by " + rattataExp + ".");
+				};
+		};
+	
+	return totalExp;
+	};
 
 // Main Code
 
@@ -51,15 +78,23 @@ findPokeTask(userPokeCount);
 
 wantsPokemon = confirm("Alright, " + userName + " do you want to catch more Pokemon?");
 
-if (addToBelt){
-	catchPoke(addToBelt, userPokeCount);
-	} 
-else {
-	trainPoke();
+if (wantsPokemon){
+	catchPoke(wantsPokemon, userPokeCount); 
+	userPokeCount = 6;
 	}
+else {
+	trainingBattles = prompt("How many training battles do you want to have?","Choose 1-3");
+	trainPoke(trainingBattles);
+	};
+	
+fullBelt = catchPoke(); 
+totalExpGained = trainPoke();
 
 
 
+console.log(userPokeCount);
+console.log(fullBelt);
+console.log(totalExpGained);
 
 
 
