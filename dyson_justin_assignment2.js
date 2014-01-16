@@ -98,7 +98,8 @@ if (wantsPokemon){
 	totalExpGained = trainPoke(trainingBattles); // trainingBattles is number passed so loop can run 1-3 times
 }
 else {
-	console.log("Alright, let's start training.");
+	console.log("Okay, you don't have to catch more Pokemon if you don't want to...");
+	console.log("Let's start training.");
 	trainingBattles = prompt("Gain Exp by training. How many training battles do you want to have?","Choose 1-3");
 	totalExpGained = trainPoke(trainingBattles); // trainingBattles is number passed so loop can run 1-3 times
 };
