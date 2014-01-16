@@ -28,11 +28,13 @@ var suggestPokeTask = function (pokeCount) {
 	else {
 		console.log("You need to start training your Pokemon!");
 		};
+		
 	return;
-	};
+	
+};
 	
 //boolean function: returns boolean value of TRUE
-var catchPoke = function (addToBelt,pokeCount) { 			
+/*var catchPoke = function (addToBelt,pokeCount) { 			
 	if (addToBelt) {	
 		while (pokeCount < 6){
 			pokeCount ++;
@@ -40,8 +42,12 @@ var catchPoke = function (addToBelt,pokeCount) {
 			} 
 		console.log("Your Poke-belt is full!");
 		return true
-		};
 	};
+};*/
+	
+var catchPoke = function (addToBelt,pokeCount) {
+	
+};
 
 // number function: returns a number called totalExp
 var trainPoke = function (trainingRounds) {
@@ -56,20 +62,23 @@ var trainPoke = function (trainingRounds) {
 		if (userOpponentPick ==="Pidgey") {
 			totalExp = totalExp + pidgeyExp;
 			console.log("Your Exp increased by " + pidgeyExp + ".");
-			} else if (userOpponentPick === "Rattata") {
-				totalExp = totalExp + rattataExp;
-				console.log("Your Exp increased by " + rattataExp + ".");
-				};
+		} else if (userOpponentPick === "Rattata") {
+			totalExp = totalExp + rattataExp;
+			console.log("Your Exp increased by " + rattataExp + ".");
 		};
-	return totalExp;
 	};
+	
+	return totalExp;
+	
+};
 	
 // string function, returns string called 
 var getPokeAndExpTotalsString = function (pokeCountString, expCountString) {
 	var totalCountsString;
 	
 	return totalCountsString = "Congratulations " + userName + ", " + pokeCountString + " and " + expCountString;
-	};
+	
+};
 
 
 // Main Code
@@ -87,12 +96,12 @@ if (wantsPokemon){
 	userPokeCount = 6;
 	trainingBattles = prompt("Now you must train. How many training battles do you want to have?","Choose 1-3");
 	totalExpGained = trainPoke(trainingBattles);
-	}
+}
 else {
 	console.log("Alright, let's start training");
 	trainingBattles = prompt("How many training battles do you want to have?","Choose 1-3");
 	totalExpGained = trainPoke(trainingBattles);
-	};
+};
 	
 finalPokeCountString = "you have " + userPokeCount + " Pokemon"
 finalExpCountString = "you gained " + totalExpGained + " experience"
