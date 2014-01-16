@@ -7,14 +7,14 @@ Completed 01/16/14
 
 
 // Global Variables
-var userName; // string
-var userPokeCount; // number
-var wantsPokemon; // boolean
+var userName; // string that holds user name
+var userPokeCount; // number of Pokemon user has
+var wantsPokemon; // boolean- does the user want to catch more pokemon
 var fullBelt; // boolean that holds the boolean function return
-var trainingBattles; // number
+var trainingBattles; // number of battles the user wants to do
 var totalExpGained; // number that holds the number function return 
-var finalPokeCountString; // string
-var finalExpCountString; // string
+var finalPokeCountString; // total pokemon user has as a string
+var finalExpCountString; // total Exp the user has gained as a string
 var pokeAndExpTotals; // string value retuned from getPokeAndExpTotalsString
 
 
@@ -51,20 +51,20 @@ var catchPoke = function (addToBelt,pokeCount) {
 
 // number function: simulates training Pokemon to gain experience Returns a number called totalExp.
 var trainPoke = function (trainingRounds) {
-	var rattataExp = 22;	// number of experience points earned 
-	var pidgeyExp = 17;	// number of experience points earned 
-	var userOpponentPick; // string
-	var totalExp = 0; // number
+	var strongPokeExp = 22;	// number of experience points earned 
+	var weakPokeExp = 17;	// number of experience points earned 
+	var userOpponentPick; // string- pokemon chosen to battle
+	var totalExp = 0; // number of Exp
 	
 	
-	for (trainingRounds; trainingRounds > 0; trainingRounds-- ) {
-		userOpponentPick = prompt("Who is your opponent.", "Pidgey or Rattata");
-		if (userOpponentPick ==="Pidgey") {
-			totalExp = totalExp + pidgeyExp;
-			console.log("Your Exp increased by " + pidgeyExp + ".");
-		} else if (userOpponentPick === "Rattata") {
-			totalExp = totalExp + rattataExp;
-			console.log("Your Exp increased by " + rattataExp + ".");
+	for (trainingRounds; trainingRounds > 0 && trainingRounds < 4; trainingRounds-- ) {
+		userOpponentPick = prompt("Who is your opponent.", "Pidgey, Nidoran, Mankey, or Rattata");
+		if (userOpponentPick ==="Pidgey" || userOpponentPick ==="Nidoran") {
+			totalExp = totalExp + weakPokeExp;
+			console.log("Your Exp increased by " + weakPokeExp + ".");
+		} else if (userOpponentPick === "Rattata" || userOpponentPick ==="Mankey") {
+			totalExp = totalExp + strongPokeExp;
+			console.log("Your Exp increased by " + strongPokeExp + ".");
 		};
 	};
 	
