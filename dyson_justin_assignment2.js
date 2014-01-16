@@ -21,9 +21,7 @@ var pokeAndExpTotals; // string value retuned from getPokeAndExpTotalsString
 // Functions
 
 //procedure: based on userPokeCount, announces the next step for Pokemon trainer
-var suggestPokeTask = function (pokeCount) {		
-	var pokeCount;
-	
+var suggestPokeTask = function (pokeCount) {			
 	if (pokeCount < 6) {
 		console.log("You need to catch some Pokemon!");
 	} 
@@ -35,9 +33,6 @@ var suggestPokeTask = function (pokeCount) {
 	
 //boolean function: returns boolean value of TRUE
 var catchPoke = function (addToBelt,pokeCount) { 			
-	var addToBelt; // boolean
-	var pokeCount; // number
-
 	if (addToBelt) {	
 		while (pokeCount < 6){
 			pokeCount ++;
@@ -50,7 +45,6 @@ var catchPoke = function (addToBelt,pokeCount) {
 
 // number function: returns a number called totalExp
 var trainPoke = function (trainingRounds) {
-	var trainingRounds; 	// number value from trainingBattles
 	var rattataExp = 22;	// number of experience points earned 
 	var pidgeyExp = 17;	// number of experience points earned 
 	var userOpponentPick; // string
@@ -67,19 +61,15 @@ var trainPoke = function (trainingRounds) {
 				console.log("Your Exp increased by " + rattataExp + ".");
 				};
 		};
-	
 	return totalExp;
 	};
 	
 // string function, returns string called 
 var getPokeAndExpTotalsString = function (pokeCountString, expCountString) {
 	var totalCountsString;
-	var expCountString;
-	var pokeCountString;
 	
 	return totalCountsString = "Congratulations " + userName + ", " + pokeCountString + " and " + expCountString;
 	};
-
 
 
 // Main Code
