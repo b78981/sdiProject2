@@ -27,26 +27,26 @@ var suggestPokeTask = function (pokeCount) {
 	} 
 	else {
 		console.log("You need to start training your Pokemon!");
-		};
+	};
 		
 	return;
 	
 };
-	
-//boolean function: returns boolean value of TRUE
-/*var catchPoke = function (addToBelt,pokeCount) { 			
-	if (addToBelt) {	
-		while (pokeCount < 6){
-			pokeCount ++;
-			console.log("Great " + userName + " you now have " + pokeCount + " Pokemon!");
-			} 
-		console.log("Your Poke-belt is full!");
-		return true
-	};
-};*/
-	
+
+//boolean function: returns boolean value of TRUE	
 var catchPoke = function (addToBelt,pokeCount) {
+	while (addToBelt) {
+		if (pokeCount < 6){
+			pokeCount ++;
+			console.log("Great, " + userName + " you now have " + pokeCount + " Pokemon!");
+			console.log("...searching for more Pokemon...");
+		} else {
+			console.log("Your Poke-belt is full! Gather some Exp to make your Pokemon stronger.");
+			addToBelt = false;
+		};
+	};
 	
+	return true;
 };
 
 // number function: returns a number called totalExp
@@ -76,7 +76,7 @@ var trainPoke = function (trainingRounds) {
 var getPokeAndExpTotalsString = function (pokeCountString, expCountString) {
 	var totalCountsString;
 	
-	return totalCountsString = "Congratulations " + userName + ", " + pokeCountString + " and " + expCountString;
+	return totalCountsString = "Congratulations " + userName + ", " + pokeCountString + " and " + expCountString + ".";
 	
 };
 
@@ -94,12 +94,12 @@ wantsPokemon = confirm("Alright, " + userName + " do you want to catch more Poke
 if (wantsPokemon){
 	fullBelt = catchPoke(wantsPokemon, userPokeCount); 
 	userPokeCount = 6;
-	trainingBattles = prompt("Now you must train. How many training battles do you want to have?","Choose 1-3");
+	trainingBattles = prompt("Gain Exp by training. How many training battles do you want to have?","Choose 1-3");
 	totalExpGained = trainPoke(trainingBattles);
 }
 else {
-	console.log("Alright, let's start training");
-	trainingBattles = prompt("How many training battles do you want to have?","Choose 1-3");
+	console.log("Alright, let's start training.");
+	trainingBattles = prompt("Gain Exp by training. How many training battles do you want to have?","Choose 1-3");
 	totalExpGained = trainPoke(trainingBattles);
 };
 	
